@@ -10,7 +10,8 @@ const routes: Routes = [
     component: PagesComponent,
     children: [
       { path: '', redirectTo: 'request', pathMatch: 'full' },
-      { path: 'request', data: { labelpt: 'Solicitação', labelen: 'Request' }, loadChildren: () => import('./request/request.module').then(module => module.RequestModule) },
+      { path: 'request',  loadChildren: () => import('./request/request.module').then(module => module.RequestModule) },
+      { path: 'forms',  loadChildren: () => import('./forms/forms.module').then(module => module.FormModule) },
     ]
   }
 ]

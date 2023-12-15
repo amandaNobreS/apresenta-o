@@ -9,6 +9,7 @@ import { RequestService } from './service/request.service';
 import { FormDynamicAngularModule } from 'form-dynamic-angular';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
+
 const routes: Routes = [
   { path: '', component: ListComponent },
   { path: 'register', component: FormComponent, data: { grouppt: 'Solicitação', groupen: "Request", labelpt: 'Cadastrar Solicitação', labelen: 'Register Request' } },
@@ -21,13 +22,13 @@ const routes: Routes = [
     FormComponent
   ],
   imports: [
-    TableModule,
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
     FormDynamicAngularModule,
-    ButtonModule
+    ButtonModule,
+    TableModule
   ],
   exports: [
     ListComponent,
@@ -37,4 +38,4 @@ const routes: Routes = [
     RequestService
   ]
 })
-export class RequestModule { }
+export class FormModule { }

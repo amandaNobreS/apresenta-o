@@ -12,10 +12,8 @@ import { RequestService } from '../service/request.service';
 export class FormComponent {
 
   controlFilter: UntypedFormGroup = this.fb.group({
-    form: '',
-    t1: '',
-    t2: '',
-    t3: ''
+    nome: '',
+    aprovacao: ''
   })
   formmFilter: IForm[] = []
 
@@ -51,10 +49,8 @@ export class FormComponent {
       this.options = data as IOptions[]
 
       this.formmFilter = [
-        { label: 'Tipo de Solicitação', col: 'col-lg-6', type: 'select', options: this.options, formControl: 'form', disabled: this.type == "view" },
-        { label: 'Tipo de Solicitação', col: 'col-lg-6', type: 'text', formControl: 't1', disabled: this.type == "view" },
-        { label: 'Tipo de Solicitação', col: 'col-lg-6', type: 'text', formControl: 't2', disabled: this.type == "view" },
-        { label: 'Tipo de Solicitação', col: 'col-lg-6', type: 'text', formControl: 't3', disabled: this.type == "view" }
+        { label: 'Nome', col: 'col-lg-6', type: 'text', formControl: 'nome'},
+        { label: 'HIerarquia de Aprovação', col: 'col-lg-6', type: 'multi', options: this.options, formControl: 'aprovacao', disabled: this.type == "view" },
       ]
     })
 
@@ -66,18 +62,17 @@ export class FormComponent {
 
   saveRequest() {
     var payload = {
-      type: this.controlFilter.value.form.descricao,
-      formResponse: this.controlFilter.value,
-      user: "teste"
+      descricao: this.controlFilter.value.descricao,
+      aprovadores: this.controlFilter.value.aprovacao,
     }
 
     if (this.id) {
-      this.service.editRequest(payload, this.id).subscribe({
+      this.service.edit(payload, this.id).subscribe({
         next: () => {
         }
       })
     } else {
-      this.service.saveRequest(payload).subscribe({
+      this.service.save(payload).subscribe({
         next: () => {
         }
       })

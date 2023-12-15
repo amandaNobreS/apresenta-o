@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+/* .control-sidebar-slide-open .control-sidebar,
+.control-sidebar-slide-open .control-sidebar::before {
+    left: 0 !important;
+    transition: left .3s ease-in-out, display .3s ease-in-out !important;
+} */
+
+/* .control-sidebar,
+.control-sidebar::before {
+    transition: margin-left .3s ease-in-out, display .3s ease-in-out !important;
+} */
+
+.page {
+    border-radius: 11px;
+    padding: 38px;
+    margin-bottom: 35px;
+}
+
+
+.top-page {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+body {
+    background-color: #EEEEEE !important;
+}
+
+#page-wrapper{
+    background-color: #fff;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.top-page h3,
+.top-page i {
+    font-size: 21px;
+    margin-left: 10px;
+}
