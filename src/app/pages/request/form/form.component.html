@@ -1,0 +1,53 @@
+<!-- <app-breadcrumb></app-breadcrumb>
+
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+
+<div class="page" *ngIf="!id">
+    <div class="top-page">
+        <div>
+            <div class="d-flex">
+                <i class="pi pi-search icon"></i>
+                <h3 *ngIf="!id" [translate]="'pageRequests.titleForm'"></h3>
+                <h3 *ngIf="id" [translate]="'pageRequests.titleEdit'"></h3>
+            </div>
+            <span *ngIf="!id" [translate]="'pageRequests.subTitleForm'"></span>
+            <span *ngIf="id" [translate]="'pageRequests.subTitleEdit'"></span>
+        </div>
+    </div>
+
+    <app-request-form></app-request-form>
+</div>
+
+<div class="page" *ngIf="id">
+    <p-tabView id="closableTabView">
+        <p-tabPanel [header]="translate.instant('menu.request')">
+            <div class="top-page">
+                <div>
+                    <div class="d-flex">
+                        <i class="pi pi-search icon"></i>
+                        <h3 *ngIf="!id" [translate]="'pageRequests.titleForm'"></h3>
+                        <h3 *ngIf="id" [translate]="'pageRequests.titleEdit'"></h3>
+                    </div>
+                    <span *ngIf="!id" [translate]="'pageRequests.subTitleForm'"></span>
+                    <span *ngIf="id" [translate]="'pageRequests.subTitleEdit'"></span>
+                </div>
+            </div>
+            <app-request-form [editInputs]="fase === 2 && !canceled"  [viewButtonsForm]=false></app-request-form>
+        </p-tabPanel>
+        <p-tabPanel *ngIf="fase >= 2" [header]="translate.instant('menu.analysis')" [selected]="fase == 2">
+            <app-assessment-form></app-assessment-form>
+        </p-tabPanel>
+        <p-tabPanel *ngIf="fase >= 3" [header]="translate.instant('menu.approval')" [selected]="fase == 3">
+            <app-approval-form [uo]=uo></app-approval-form>
+        </p-tabPanel>
+        <p-tabPanel *ngIf="fase >= 4" [header]="translate.instant('menu.execution')" [selected]="fase == 4">
+            <app-execution-form [uo]=uo></app-execution-form>
+        </p-tabPanel>
+        <p-tabPanel *ngIf="fase >= 5" [header]="translate.instant('menu.removal')" [selected]="fase == 5">
+            <app-removal-form [uo]=uo></app-removal-form>
+        </p-tabPanel>
+        <p-tabPanel *ngIf="fase >= 6" [header]="translate.instant('menu.finalization')" [selected]="fase == 6">
+            <app-finalize-form [uo]=uo></app-finalize-form>
+        </p-tabPanel>
+    </p-tabView>
+</div> -->
